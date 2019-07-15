@@ -3,7 +3,7 @@ var pipes = [];
 function setup() {
   createCanvas(400, 600);
   bird = new Bird();
-  pipes.push(new Pipe());
+  pipes.push(new Pipe());  //このコードを入れたら画面が消えた(白くなった)
 }
 
 function draw() {
