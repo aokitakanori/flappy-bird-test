@@ -3,7 +3,7 @@ var pipes = [];
 function setup() {
   createCanvas(400, 600);
   bird = new Bird();
-  pipes.push(new Pipe());  //このコードを入れたら画面が消えた(白くなった)
+  pipes.push(new Pipe());  // このコードは、pipe.jsのPipeクラスを初期化してる。その初期化がうまくいかないからエラーが出てた。(詳しくはpipe.jsのコメント参照)
 }
 
 function draw() {
