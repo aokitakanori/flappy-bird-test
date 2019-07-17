@@ -11,9 +11,22 @@ function draw() {
   bird.update();
   bird.show();
 
-  for (var i = 0; i < pipes.length; i++) {
+  if (frameCount % 40  == 0) {
+  pipes.push(new Pipe());
+  }
+
+  for (var i = pipes.length-1; i >= 0; i--) {
     pipes[i].show();
     pipes[i].update();
+
+    if (pipes[i].hits(bird)) {
+      console.log("HIT");
+    }
+
+
+    if (pipes[i].offscreen()) {
+      pipes.splice(i, 0);
+    }
   }
 }
 
