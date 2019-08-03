@@ -11,8 +11,9 @@ function draw() {
   bird.update();
   bird.show();
 
+  // Instanciate Pipe class for every 40ms
   if (frameCount % 40  == 0) {
-  pipes.push(new Pipe());
+    pipes.push(new Pipe());
   }
 
   for (var i = pipes.length-1; i >= 0; i--) {
@@ -22,11 +23,13 @@ function draw() {
     if (pipes[i].hits(bird)) {
       // Restart game when the ball hits the bar
       if (pipes[i].end == true){
-        setup();
+        pipes.stop();
+        //setup();
         console.log("Game end");
       }
     }
 
+    // Remove the passed bar
     if (pipes[i].offscreen()) {
       pipes.splice(i, 0);
     }

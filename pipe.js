@@ -32,6 +32,11 @@ function Pipe() {
     this.x -= this.speed;
   }
 
+  this.remove = function() {
+    this.top = 0;
+    this.buttom = 0;
+  }
+
   this.offscreen = function() {
     if (this.x < -this.w) {
       return true;
