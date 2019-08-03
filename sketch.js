@@ -20,9 +20,12 @@ function draw() {
     pipes[i].update();
 
     if (pipes[i].hits(bird)) {
-      console.log("HIT");
+      // Restart game when the ball hits the bar
+      if (pipes[i].end == true){
+        setup();
+        console.log("Game end");
+      }
     }
-
 
     if (pipes[i].offscreen()) {
       pipes.splice(i, 0);
@@ -36,4 +39,3 @@ function keyPressed() {
     // console.log("SPACE")
   }
 }
-
